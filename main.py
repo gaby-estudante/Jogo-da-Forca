@@ -25,7 +25,7 @@ palavras = { # MELHORIA: separar por categorias (ex: nome, comida, animal, país
 # Pede pro usuário escolher um nível de dificuldade
 def escolher_dificuldade():
     while True:
-        nivel = input("Escolha dificuldade (facil / medio / dificil): ").lower()
+        nivel = input("Escolha uma dificuldade para iniciar (facil / medio / dificil): ").lower()
 
         if nivel in palavras:
             return nivel
@@ -34,7 +34,6 @@ def escolher_dificuldade():
 
 
 # Escolhe uma palavra aleatoriamente
-# ALTERAÇÃO: poderia armazenar a palavra escolhida em um dicionario
 def escolher_palavra(dificuldade):
     return random.choice(palavras[dificuldade])
 
