@@ -1,8 +1,9 @@
+# FUNÇÕES
+
 import random
 
 # Lista de palavras separadas por nível de dificuldade e categoria
 palavras = {
-
     "facil": {
         "animal": ["gato", "pato", "rato", "tatu", "lobo"],
         "comida": ["bolo", "pao", "uva", "ovo", "mel"],
@@ -39,7 +40,7 @@ def escolher_dificuldade():
             print("Dificuldade inválida.")
 
 
-# Escolher categoria
+# Pede pro usuário escolher uma categoria
 def escolher_categoria(dificuldade):
 
     categorias = palavras[dificuldade].keys()
@@ -100,7 +101,7 @@ def mostrar_palavra(letras_descobertas):
 
 #--------------------------------------------------------------------
 
-# MAIN
+# CODIGO MAIN
 
 def jogar():
 
@@ -114,7 +115,13 @@ def jogar():
     letras_descobertas = ["_"] * len(palavra)
     letras_usadas = set()
 
-    tentativas = 5
+    tentativas = 0
+    if (dificuldade) == "facil":
+        tentativas = 5
+    elif (dificuldade)  == "medio":
+        tentativas = 8
+    elif (dificuldade) == "dificil":
+        tentativas = 10
 
     while tentativas > 0 and "_" in letras_descobertas:
 
