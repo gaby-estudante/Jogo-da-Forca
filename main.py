@@ -32,13 +32,16 @@ palavras = {
 # Pede pro usuário escolher um nível de dificuldade
 def escolher_dificuldade():
     while True:
-        nivel = input("Escolha uma dificuldade (facil / medio / dificil): ").lower()
+        try:     
+            nivel = input("Escolha uma dificuldade (facil / medio / dificil): ").lower()
 
-        if nivel in palavras:
-            return nivel
-        else:
-            print("Dificuldade inválida.")
+            if nivel in palavras:
+                return nivel
+            else:
+                raise ValueError("Dificuldade inválida.")
 
+        except ValueError as erro:
+            print("Erro:", erro)
 
 # Pede pro usuário escolher uma categoria
 def escolher_categoria(dificuldade):
@@ -50,12 +53,16 @@ def escolher_categoria(dificuldade):
         print("-", c)
 
     while True:
-        categoria = input("Escolha uma categoria: ").lower()
+        try: 
+            categoria = input("Escolha uma categoria: ").lower()
 
-        if categoria in palavras[dificuldade]:
-            return categoria
-        else:
-            print("Categoria inválida.")
+            if categoria in palavras[dificuldade]:
+                return categoria
+            else:
+                raise ValueError("Categoria inválida.")
+
+        except ValueError as erro:
+            print("Erro:", erro)
 
 
 # Escolhe uma palavra aleatoriamente
